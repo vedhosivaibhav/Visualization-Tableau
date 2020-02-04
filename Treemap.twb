@@ -1,0 +1,834 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20194.19.1010.1202                               -->
+<workbook original-version='18.1' source-build='2019.4.0 (20194.19.1010.1202)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='word (word)' inline='true' name='federated.0nk9b1z1l8104817rkovg1459cwb' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='word' name='excel-direct.0kudor81qs5jwj1dxhmug08q51ta'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/Vedhosi Vaibhav/Desktop/EngProj/word.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.0kudor81qs5jwj1dxhmug08q51ta' name='word' table='[word$]' type='table'>
+          <columns gridOrigin='A1:B6644:no:A1:B6644:0' header='yes' outcome='6'>
+            <column datatype='string' name='Word' ordinal='0' />
+            <column datatype='integer' name='Word_Count' ordinal='1' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Word</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Word]</local-name>
+            <parent-name>[word]</parent-name>
+            <remote-alias>Word</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Word_Count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Word_Count]</local-name>
+            <parent-name>[word]</parent-name>
+            <remote-alias>Word_Count</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[word]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:B6644:no:A1:B6644:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.479253' measure-ordering='alphabetic' measure-percentage='0.520747' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Treemap of Word Count</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='word (word)' name='federated.0nk9b1z1l8104817rkovg1459cwb' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0nk9b1z1l8104817rkovg1459cwb'>
+            <column datatype='string' name='[Word]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Word_Count]' role='measure' type='quantitative' />
+            <column-instance column='[Word]' derivation='None' name='[none:Word:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Word_Count]' derivation='Sum' name='[sum:Word_Count:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0nk9b1z1l8104817rkovg1459cwb].[none:Word:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Word:nk]' />
+              <groupfilter function='union'>
+                <groupfilter from='&quot;a&quot;' function='range' level='[none:Word:nk]' to='&quot;aaronbank&quot;' />
+                <groupfilter from='&quot;abb&quot;' function='range' level='[none:Word:nk]' to='&quot;abtc&quot;' />
+                <groupfilter from='&quot;abuseofpow&quot;' function='range' level='[none:Word:nk]' to='&quot;adamschiff&quot;' />
+                <groupfilter from='&quot;addingham&quot;' function='range' level='[none:Word:nk]' to='&quot;amerentri&quot;' />
+                <groupfilter from='&quot;american&quot;' function='range' level='[none:Word:nk]' to='&quot;amwatch&quot;' />
+                <groupfilter from='&quot;anachronist&quot;' function='range' level='[none:Word:nk]' to='&quot;announcewarnock&quot;' />
+                <groupfilter from='&quot;anonym&quot;' function='range' level='[none:Word:nk]' to='&quot;antimoneylaunderingaml&quot;' />
+                <groupfilter from='&quot;anxieti&quot;' function='range' level='[none:Word:nk]' to='&quot;architect&quot;' />
+                <groupfilter from='&quot;arcuriousaffair&quot;' function='range' level='[none:Word:nk]' to='&quot;arrogantbank&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;arronbanksleaksif&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;artactiv&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;arthurcclark&quot;' />
+                <groupfilter from='&quot;artificialintellig&quot;' function='range' level='[none:Word:nk]' to='&quot;askborishohnson&quot;' />
+                <groupfilter from='&quot;askingforafriend&quot;' function='range' level='[none:Word:nk]' to='&quot;audjpi&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;auob&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;aussi&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;austerityg&quot;' />
+                <groupfilter from='&quot;australian&quot;' function='range' level='[none:Word:nk]' to='&quot;awesom&quot;' />
+                <groupfilter from='&quot;awk&quot;' function='range' level='[none:Word:nk]' to='&quot;backbenita&quot;' />
+                <groupfilter from='&quot;backbritishfarm&quot;' function='range' level='[none:Word:nk]' to='&quot;bangor&quot;' />
+                <groupfilter from='&quot;bankholiday&quot;' function='range' level='[none:Word:nk]' to='&quot;bawjaw&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;bbcbias&quot;' />
+                <groupfilter from='&quot;bbcchildreninne&quot;' function='range' level='[none:Word:nk]' to='&quot;bbcfour&quot;' />
+                <groupfilter from='&quot;bbcgt&quot;' function='range' level='[none:Word:nk]' to='&quot;bbcmoneybox&quot;' />
+                <groupfilter from='&quot;bbcnewsnight&quot;' function='range' level='[none:Word:nk]' to='&quot;bbcpl&quot;' />
+                <groupfilter from='&quot;bbcpolit&quot;' function='range' level='[none:Word:nk]' to='&quot;bbcq&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;bbcquestion&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;bbcquestionstim&quot;' />
+                <groupfilter from='&quot;bbcr&quot;' function='range' level='[none:Word:nk]' to='&quot;bbcyou&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;bbcyourquext&quot;' />
+                <groupfilter from='&quot;bbqt&quot;' function='range' level='[none:Word:nk]' to='&quot;bcpccongress&quot;' />
+                <groupfilter from='&quot;bd&quot;' function='range' level='[none:Word:nk]' to='&quot;belaru&quot;' />
+                <groupfilter from='&quot;belfasthour&quot;' function='range' level='[none:Word:nk]' to='&quot;benn&quot;' />
+                <groupfilter from='&quot;berkshir&quot;' function='range' level='[none:Word:nk]' to='&quot;birkenhead&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;birminghamelectionsoffic&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;birminghamyardley&quot;' />
+                <groupfilter from='&quot;bishopaucklandfarm&quot;' function='range' level='[none:Word:nk]' to='&quot;bitch&quot;' />
+                <groupfilter from='&quot;bitcoin&quot;' function='range' level='[none:Word:nk]' to='&quot;blaxit&quot;' />
+                <groupfilter from='&quot;blaydonbrexitalli&quot;' function='range' level='[none:Word:nk]' to='&quot;bless&quot;' />
+                <groupfilter from='&quot;blind&quot;' function='range' level='[none:Word:nk]' to='&quot;blockedbyjohnkennedi&quot;' />
+                <groupfilter from='&quot;blondchanc&quot;' function='range' level='[none:Word:nk]' to='&quot;bobbi&quot;' />
+                <groupfilter from='&quot;bof&quot;' function='range' level='[none:Word:nk]' to='&quot;boilsmypiss&quot;' />
+                <groupfilter from='&quot;bojobabi&quot;' function='range' level='[none:Word:nk]' to='&quot;bollock&quot;' />
+                <groupfilter from='&quot;bollockstobrexitshop&quot;' function='range' level='[none:Word:nk]' to='&quot;bolsov&quot;' />
+                <groupfilter from='&quot;boltononfir&quot;' function='range' level='[none:Word:nk]' to='&quot;bonu&quot;' />
+                <groupfilter from='&quot;bookcitymilano&quot;' function='range' level='[none:Word:nk]' to='&quot;boreoffjeez&quot;' />
+                <groupfilter from='&quot;borijohnson&quot;' function='range' level='[none:Word:nk]' to='&quot;borisbetrayaltreati&quot;' />
+                <groupfilter from='&quot;borisbrexit&quot;' function='range' level='[none:Word:nk]' to='&quot;borisconski&quot;' />
+                <groupfilter from='&quot;borisgetitdon&quot;' function='range' level='[none:Word:nk]' to='&quot;borisjohn&quot;' />
+                <groupfilter from='&quot;borisjohnsonbingo&quot;' function='range' level='[none:Word:nk]' to='&quot;borisjohnsonleadership&quot;' />
+                <groupfilter from='&quot;borisjohnsonliar&quot;' function='range' level='[none:Word:nk]' to='&quot;borri&quot;' />
+                <groupfilter from='&quot;borxit&quot;' function='range' level='[none:Word:nk]' to='&quot;boysofspr&quot;' />
+                <groupfilter from='&quot;bracknelltori&quot;' function='range' level='[none:Word:nk]' to='&quot;brainwashedbritain&quot;' />
+                <groupfilter from='&quot;brandonlewi&quot;' function='range' level='[none:Word:nk]' to='&quot;breadandcircus&quot;' />
+                <groupfilter from='&quot;breakfast&quot;' function='range' level='[none:Word:nk]' to='&quot;breakingbad&quot;' />
+                <groupfilter from='&quot;breakingpoint&quot;' function='range' level='[none:Word:nk]' to='&quot;brexistentialcrisi&quot;' />
+                <groupfilter from='&quot;brexitalli&quot;' function='range' level='[none:Word:nk]' to='&quot;brexitbenefit&quot;' />
+                <groupfilter from='&quot;brexitbetrayald&quot;' function='range' level='[none:Word:nk]' to='&quot;brexitbreaksbritain&quot;' />
+                <groupfilter from='&quot;brexitbritainisback&quot;' function='range' level='[none:Word:nk]' to='&quot;brexitcanbedoneinsixmonth&quot;' />
+                <groupfilter from='&quot;brexitchao&quot;' function='range' level='[none:Word:nk]' to='&quot;brexitcircu&quot;' />
+                <groupfilter from='&quot;brexitclub&quot;' function='range' level='[none:Word:nk]' to='&quot;brexitcrim&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;brexitday&quot;' />
+                <groupfilter from='&quot;brexitdisast&quot;' function='range' level='[none:Word:nk]' to='&quot;brexitdrama&quot;' />
+                <groupfilter from='&quot;brexitelit&quot;' function='range' level='[none:Word:nk]' to='&quot;brexitlexit&quot;' />
+                <groupfilter from='&quot;brexitliar&quot;' function='range' level='[none:Word:nk]' to='&quot;brexitmean&quot;' />
+                <groupfilter from='&quot;brexitmehol&quot;' function='range' level='[none:Word:nk]' to='&quot;brexitnod&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;brexitomet&quot;' />
+                <groupfilter from='&quot;brexitpartybori&quot;' function='range' level='[none:Word:nk]' to='&quot;brexitpursuedbyabear&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;brexitracist&quot;' />
+                <groupfilter from='&quot;brexitrepubl&quot;' function='range' level='[none:Word:nk]' to='&quot;brexitsculptur&quot;' />
+                <groupfilter from='&quot;brexitshamblesdon&quot;' function='range' level='[none:Word:nk]' to='&quot;brexituncertainti&quot;' />
+                <groupfilter from='&quot;brexitwto&quot;' function='range' level='[none:Word:nk]' to='&quot;brexnyet&quot;' />
+                <groupfilter from='&quot;brexshitheadslogan&quot;' function='range' level='[none:Word:nk]' to='&quot;brief&quot;' />
+                <groupfilter from='&quot;brighton&quot;' function='range' level='[none:Word:nk]' to='&quot;bringourboysback&quot;' />
+                <groupfilter from='&quot;brinobak&quot;' function='range' level='[none:Word:nk]' to='&quot;brinoryparti&quot;' />
+                <groupfilter from='&quot;bristolnw&quot;' function='range' level='[none:Word:nk]' to='&quot;bristolwest&quot;' />
+                <groupfilter from='&quot;britainfirst&quot;' function='range' level='[none:Word:nk]' to='&quot;britbox&quot;' />
+                <groupfilter from='&quot;britishbrexitcorpor&quot;' function='range' level='[none:Word:nk]' to='&quot;britishhindu&quot;' />
+                <groupfilter from='&quot;britishindian&quot;' function='range' level='[none:Word:nk]' to='&quot;britishroyalti&quot;' />
+                <groupfilter from='&quot;britnat&quot;' function='range' level='[none:Word:nk]' to='&quot;britter&quot;' />
+                <groupfilter from='&quot;broadbandboredom&quot;' function='range' level='[none:Word:nk]' to='&quot;broadbandcommun&quot;' />
+                <groupfilter from='&quot;broadbandfre&quot;' function='range' level='[none:Word:nk]' to='&quot;bromsgrov&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;brown&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;brownnosepup&quot;' />
+                <groupfilter from='&quot;broxtowebrexit&quot;' function='range' level='[none:Word:nk]' to='&quot;brunel&quot;' />
+                <groupfilter from='&quot;brusselssprout&quot;' function='range' level='[none:Word:nk]' to='&quot;bushopauckland&quot;' />
+                <groupfilter from='&quot;businessabroad&quot;' function='range' level='[none:Word:nk]' to='&quot;businessmorn&quot;' />
+                <groupfilter from='&quot;businessr&quot;' function='range' level='[none:Word:nk]' to='&quot;bwfc&quot;' />
+                <groupfilter from='&quot;bxpswindl&quot;' function='range' level='[none:Word:nk]' to='&quot;cambridg&quot;' />
+                <groupfilter from='&quot;camden&quot;' function='range' level='[none:Word:nk]' to='&quot;cameronpink&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;campaignshitthatneverhappen&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;campaigntrail&quot;' />
+                <groupfilter from='&quot;canadianelect&quot;' function='range' level='[none:Word:nk]' to='&quot;candidatesbeingtalkeddown&quot;' />
+                <groupfilter from='&quot;cannabiscommun&quot;' function='range' level='[none:Word:nk]' to='&quot;cantbeinandout&quot;' />
+                <groupfilter from='&quot;canterbuti&quot;' function='range' level='[none:Word:nk]' to='&quot;carshalton&quot;' />
+                <groupfilter from='&quot;cartoonoftheday&quot;' function='range' level='[none:Word:nk]' to='&quot;cataloni&quot;' />
+                <groupfilter from='&quot;catalunya&quot;' function='range' level='[none:Word:nk]' to='&quot;cbeebi&quot;' />
+                <groupfilter from='&quot;cbiconfer&quot;' function='range' level='[none:Word:nk]' to='&quot;cbistori&quot;' />
+                <groupfilter from='&quot;cbssundaymorn&quot;' function='range' level='[none:Word:nk]' to='&quot;cdnmedia&quot;' />
+                <groupfilter from='&quot;cdu&quot;' function='range' level='[none:Word:nk]' to='&quot;changepolit&quot;' />
+                <groupfilter from='&quot;channelisland&quot;' function='range' level='[none:Word:nk]' to='&quot;chester&quot;' />
+                <groupfilter from='&quot;chichest&quot;' function='range' level='[none:Word:nk]' to='&quot;childrenincar&quot;' />
+                <groupfilter from='&quot;childright&quot;' function='range' level='[none:Word:nk]' to='&quot;chile&quot;' />
+                <groupfilter from='&quot;chinag&quot;' function='range' level='[none:Word:nk]' to='&quot;christian&quot;' />
+                <groupfilter from='&quot;christmasgift&quot;' function='range' level='[none:Word:nk]' to='&quot;clacton&quot;' />
+                <groupfilter from='&quot;claric&quot;' function='range' level='[none:Word:nk]' to='&quot;cleanbreak&quot;' />
+                <groupfilter from='&quot;clearingright&quot;' function='range' level='[none:Word:nk]' to='&quot;clientjournalist&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;climateact&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;climatebreakdown&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;climatechangehoax&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;climatechangeisr&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;climatedeni&quot;' />
+                <groupfilter from='&quot;climatehust&quot;' function='range' level='[none:Word:nk]' to='&quot;cllrnicholascrossan&quot;' />
+                <groupfilter from='&quot;closedmindset&quot;' function='range' level='[none:Word:nk]' to='&quot;cnbc&quot;' />
+                <groupfilter from='&quot;cnni&quot;' function='range' level='[none:Word:nk]' to='&quot;commonsens&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;communismkil&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;communismnh&quot;' />
+                <groupfilter from='&quot;communistjihad&quot;' function='range' level='[none:Word:nk]' to='&quot;comradjohnson&quot;' />
+                <groupfilter from='&quot;confus&quot;' function='range' level='[none:Word:nk]' to='&quot;consciouslycruel&quot;' />
+                <groupfilter from='&quot;conservativeinc&quot;' function='range' level='[none:Word:nk]' to='&quot;conservativemp&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;conservativepartyelectionbroadcast&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;conservativepatriot&quot;' />
+                <groupfilter from='&quot;constuct&quot;' function='range' level='[none:Word:nk]' to='&quot;corbyen&quot;' />
+                <groupfilter from='&quot;corbynalltheway&quot;' function='range' level='[none:Word:nk]' to='&quot;corbynonmarr&quot;' />
+                <groupfilter from='&quot;corbynunitedfootballclub&quot;' function='range' level='[none:Word:nk]' to='&quot;corptax&quot;' />
+                <groupfilter from='&quot;corruptgop&quot;' function='range' level='[none:Word:nk]' to='&quot;countylin&quot;' />
+                <groupfilter from='&quot;court&quot;' function='range' level='[none:Word:nk]' to='&quot;crofti&quot;' />
+                <groupfilter from='&quot;cromwel&quot;' function='range' level='[none:Word:nk]' to='&quot;ctf&quot;' />
+                <groupfilter from='&quot;cultbrexit&quot;' function='range' level='[none:Word:nk]' to='&quot;curiouscat&quot;' />
+                <groupfilter from='&quot;currencypair&quot;' function='range' level='[none:Word:nk]' to='&quot;cyberguerrillaautonomousnexu&quot;' />
+                <groupfilter from='&quot;cycl&quot;' function='range' level='[none:Word:nk]' to='&quot;darkmoney&quot;' />
+                <groupfilter from='&quot;darktriadtrait&quot;' function='range' level='[none:Word:nk]' to='&quot;dartingtonest&quot;' />
+                <groupfilter from='&quot;datadc&quot;' function='range' level='[none:Word:nk]' to='&quot;dckbrxt&quot;' />
+                <groupfilter from='&quot;deadinaditch&quot;' function='range' level='[none:Word:nk]' to='&quot;deadlin&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;dealoftheday&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;deardemocraci&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;debatebingo&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;debateelector&quot;' />
+                <groupfilter from='&quot;debevoiseeuropeblog&quot;' function='range' level='[none:Word:nk]' to='&quot;deepstat&quot;' />
+                <groupfilter from='&quot;defeatlabour&quot;' function='range' level='[none:Word:nk]' to='&quot;demandbett&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;democracydeni&quot;' />
+                <groupfilter from='&quot;democraticdeb&quot;' function='range' level='[none:Word:nk]' to='&quot;denial&quot;' />
+                <groupfilter from='&quot;dentalnew&quot;' function='range' level='[none:Word:nk]' to='&quot;devon&quot;' />
+                <groupfilter from='&quot;dexit&quot;' function='range' level='[none:Word:nk]' to='&quot;dirtytrick&quot;' />
+                <groupfilter from='&quot;disablebrexit&quot;' function='range' level='[none:Word:nk]' to='&quot;disrupt&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;distilledlog&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;distribut&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;ditch&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;ditchbori&quot;' />
+                <groupfilter from='&quot;ditchcorbyn&quot;' function='range' level='[none:Word:nk]' to='&quot;ditchianduncansmith&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;ditchlabour&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;ditchsajid&quot;' />
+                <groupfilter from='&quot;ditchthetoriesondecemb&quot;' function='range' level='[none:Word:nk]' to='&quot;dolartl&quot;' />
+                <groupfilter from='&quot;dollarindex&quot;' function='range' level='[none:Word:nk]' to='&quot;domin&quot;' />
+                <groupfilter from='&quot;dominicfrisbi&quot;' function='range' level='[none:Word:nk]' to='&quot;dominicraab&quot;' />
+                <groupfilter from='&quot;donat&quot;' function='range' level='[none:Word:nk]' to='&quot;dontbelamevotedameagain&quot;' />
+                <groupfilter from='&quot;dontfal&quot;' function='range' level='[none:Word:nk]' to='&quot;dontvotetobin&quot;' />
+                <groupfilter from='&quot;donvalley&quot;' function='range' level='[none:Word:nk]' to='&quot;douch&quot;' />
+                <groupfilter from='&quot;dow&quot;' function='range' level='[none:Word:nk]' to='&quot;drainthedeepst&quot;' />
+                <groupfilter from='&quot;drama&quot;' function='range' level='[none:Word:nk]' to='&quot;dubaiairshow&quot;' />
+                <groupfilter from='&quot;duchess&quot;' function='range' level='[none:Word:nk]' to='&quot;dunde&quot;' />
+                <groupfilter from='&quot;dupuda&quot;' function='range' level='[none:Word:nk]' to='&quot;dutch&quot;' />
+                <groupfilter from='&quot;dyk&quot;' function='range' level='[none:Word:nk]' to='&quot;ebn&quot;' />
+                <groupfilter from='&quot;echr&quot;' function='range' level='[none:Word:nk]' to='&quot;ecommerc&quot;' />
+                <groupfilter from='&quot;economicind&quot;' function='range' level='[none:Word:nk]' to='&quot;edsheeran&quot;' />
+                <groupfilter from='&quot;educationcannotwait&quot;' function='range' level='[none:Word:nk]' to='&quot;elcamino&quot;' />
+                <groupfilter from='&quot;electionbrib&quot;' function='range' level='[none:Word:nk]' to='&quot;electiondaili&quot;' />
+                <groupfilter from='&quot;electionfraud&quot;' function='range' level='[none:Word:nk]' to='&quot;eliot&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;elizabethpayn&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;ellaellaella&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;elm&quot;' />
+                <groupfilter from='&quot;eltham&quot;' function='range' level='[none:Word:nk]' to='&quot;empir&quot;' />
+                <groupfilter from='&quot;employmentlaw&quot;' function='range' level='[none:Word:nk]' to='&quot;enemyofthepeopl&quot;' />
+                <groupfilter from='&quot;energyeffici&quot;' function='range' level='[none:Word:nk]' to='&quot;engineersjourn&quot;' />
+                <groupfilter from='&quot;englandfootbal&quot;' function='range' level='[none:Word:nk]' to='&quot;englandsdreaming&quot;' />
+                <groupfilter from='&quot;englishdemocrat&quot;' function='range' level='[none:Word:nk]' to='&quot;enochpowel&quot;' />
+                <groupfilter from='&quot;enoughisrnough&quot;' function='range' level='[none:Word:nk]' to='&quot;entrepreneurship&quot;' />
+                <groupfilter from='&quot;environment&quot;' function='range' level='[none:Word:nk]' to='&quot;episodeix&quot;' />
+                <groupfilter from='&quot;epsteindidntkillhimself&quot;' function='range' level='[none:Word:nk]' to='&quot;eresid&quot;' />
+                <groupfilter from='&quot;ericswalwel&quot;' function='range' level='[none:Word:nk]' to='&quot;esher&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;espionag&quot;' />
+                <groupfilter from='&quot;essex&quot;' function='range' level='[none:Word:nk]' to='&quot;eubenefit&quot;' />
+                <groupfilter from='&quot;eucitizenschampion&quot;' function='range' level='[none:Word:nk]' to='&quot;eulaw&quot;' />
+                <groupfilter from='&quot;eunat&quot;' function='range' level='[none:Word:nk]' to='&quot;eur&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;euresid&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;eurjpi&quot;' />
+                <groupfilter from='&quot;eurobiz&quot;' function='range' level='[none:Word:nk]' to='&quot;euromillion&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;europavoic&quot;' />
+                <groupfilter from='&quot;europeanarmi&quot;' function='range' level='[none:Word:nk]' to='&quot;europeansocialfund&quot;' />
+                <groupfilter from='&quot;europehous&quot;' function='range' level='[none:Word:nk]' to='&quot;euroskept&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;eurovis&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;eurozon&quot;' />
+                <groupfilter from='&quot;eusettl&quot;' function='range' level='[none:Word:nk]' to='&quot;exitbrexit&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;exitthegam&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;exmoor&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;expert&quot;' />
+                <groupfilter from='&quot;expos&quot;' function='range' level='[none:Word:nk]' to='&quot;eyerolllol&quot;' />
+                <groupfilter from='&quot;facebookfix&quot;' function='range' level='[none:Word:nk]' to='&quot;fact&quot;' />
+                <groupfilter from='&quot;factcheckuk&quot;' function='range' level='[none:Word:nk]' to='&quot;factsmatt&quot;' />
+                <groupfilter from='&quot;failbu&quot;' function='range' level='[none:Word:nk]' to='&quot;fakemand&quot;' />
+                <groupfilter from='&quot;fakenewstour&quot;' function='range' level='[none:Word:nk]' to='&quot;fanfict&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;fantasyeconom&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;fantasypolit&quot;' />
+                <groupfilter from='&quot;faragefraud&quot;' function='range' level='[none:Word:nk]' to='&quot;farleft&quot;' />
+                <groupfilter from='&quot;farmdog&quot;' function='range' level='[none:Word:nk]' to='&quot;farri&quot;' />
+                <groupfilter from='&quot;farrightmedia&quot;' function='range' level='[none:Word:nk]' to='&quot;fascistwoman&quot;' />
+                <groupfilter from='&quot;fashiontrend&quot;' function='range' level='[none:Word:nk]' to='&quot;fayjon&quot;' />
+                <groupfilter from='&quot;fbr&quot;' function='range' level='[none:Word:nk]' to='&quot;feudal&quot;' />
+                <groupfilter from='&quot;ffp&quot;' function='range' level='[none:Word:nk]' to='&quot;fiatcurr&quot;' />
+                <groupfilter from='&quot;fibdum&quot;' function='range' level='[none:Word:nk]' to='&quot;filthypieceoftoerag&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;finalsayforal&quot;' />
+                <groupfilter from='&quot;financialcent&quot;' function='range' level='[none:Word:nk]' to='&quot;firtash&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;fishandchip&quot;' />
+                <groupfilter from='&quot;fishingright&quot;' function='range' level='[none:Word:nk]' to='&quot;fli&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;flintshir&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;flipflop&quot;' />
+                <groupfilter from='&quot;florida&quot;' function='range' level='[none:Word:nk]' to='&quot;followthemoney&quot;' />
+                <groupfilter from='&quot;fomc&quot;' function='range' level='[none:Word:nk]' to='&quot;foodanddrink&quot;' />
+                <groupfilter from='&quot;foodforthought&quot;' function='range' level='[none:Word:nk]' to='&quot;fool&quot;' />
+                <groupfilter from='&quot;footballleagu&quot;' function='range' level='[none:Word:nk]' to='&quot;forestofdean&quot;' />
+                <groupfilter from='&quot;forexanalysi&quot;' function='range' level='[none:Word:nk]' to='&quot;forexsign&quot;' />
+                <groupfilter from='&quot;forfreedom&quot;' function='range' level='[none:Word:nk]' to='&quot;frackingbarsteward&quot;' />
+                <groupfilter from='&quot;francoi&quot;' function='range' level='[none:Word:nk]' to='&quot;frauderendum&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;freak&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;freebiafra&quot;' />
+                <groupfilter from='&quot;freebroadbandforal&quot;' function='range' level='[none:Word:nk]' to='&quot;freecountri&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;freedomofexpress&quot;' />
+                <groupfilter from='&quot;freehongkong&quot;' function='range' level='[none:Word:nk]' to='&quot;freight&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;frenchgovt&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;fresnocounti&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;friday&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;fridayfact&quot;' />
+                <groupfilter from='&quot;fridaymotiv&quot;' function='range' level='[none:Word:nk]' to='&quot;frontpagestoday&quot;' />
+                <groupfilter from='&quot;fst&quot;' function='range' level='[none:Word:nk]' to='&quot;furi&quot;' />
+                <groupfilter from='&quot;futurefact&quot;' function='range' level='[none:Word:nk]' to='&quot;gamergirl&quot;' />
+                <groupfilter from='&quot;gammonflight&quot;' function='range' level='[none:Word:nk]' to='&quot;gbmfg&quot;' />
+                <groupfilter from='&quot;gbpaud&quot;' function='range' level='[none:Word:nk]' to='&quot;gbpeur&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;gbpnzd&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;gbptri&quot;' />
+                <groupfilter from='&quot;gbrlion&quot;' function='range' level='[none:Word:nk]' to='&quot;gdp&quot;' />
+                <groupfilter from='&quot;gebrexit&quot;' function='range' level='[none:Word:nk]' to='&quot;gener&quot;' />
+                <groupfilter from='&quot;generalelectiondeb&quot;' function='range' level='[none:Word:nk]' to='&quot;german&quot;' />
+                <groupfilter from='&quot;germexit&quot;' function='range' level='[none:Word:nk]' to='&quot;getborisdump&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;getborisout&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;getbrexitditch&quot;' />
+                <groupfilter from='&quot;getbrexitdoneproperli&quot;' function='range' level='[none:Word:nk]' to='&quot;getbrexitfon&quot;' />
+                <groupfilter from='&quot;getbrexitright&quot;' function='range' level='[none:Word:nk]' to='&quot;getreal&quot;' />
+                <groupfilter from='&quot;getshenmuedon&quot;' function='range' level='[none:Word:nk]' to='&quot;getthenhsgon&quot;' />
+                <groupfilter from='&quot;gettingbrexitdon&quot;' function='range' level='[none:Word:nk]' to='&quot;gi&quot;' />
+                <groupfilter from='&quot;gift&quot;' function='range' level='[none:Word:nk]' to='&quot;gilet&quot;' />
+                <groupfilter from='&quot;gilletsjaun&quot;' function='range' level='[none:Word:nk]' to='&quot;glaswegian&quot;' />
+                <groupfilter from='&quot;globalbritain&quot;' function='range' level='[none:Word:nk]' to='&quot;gloucestershir&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;gmo&quot;' />
+                <groupfilter from='&quot;goborisgo&quot;' function='range' level='[none:Word:nk]' to='&quot;goebbelsstylemsm&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;goggleboxfriday&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;golanheight&quot;' />
+                <groupfilter from='&quot;goldenboot&quot;' function='range' level='[none:Word:nk]' to='&quot;googl&quot;' />
+                <groupfilter from='&quot;gordon&quot;' function='range' level='[none:Word:nk]' to='&quot;gotourvot&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;goveout&quot;' />
+                <groupfilter from='&quot;govt&quot;' function='range' level='[none:Word:nk]' to='&quot;grandslamdart&quot;' />
+                <groupfilter from='&quot;grant&quot;' function='range' level='[none:Word:nk]' to='&quot;greatangl&quot;' />
+                <groupfilter from='&quot;greatelectoralfraud&quot;' function='range' level='[none:Word:nk]' to='&quot;greed&quot;' />
+                <groupfilter from='&quot;greenback&quot;' function='range' level='[none:Word:nk]' to='&quot;greennewd&quot;' />
+                <groupfilter from='&quot;greenpartymanifesto&quot;' function='range' level='[none:Word:nk]' to='&quot;greenwich&quot;' />
+                <groupfilter from='&quot;grenfelltowerfir&quot;' function='range' level='[none:Word:nk]' to='&quot;gtfo&quot;' />
+                <groupfilter from='&quot;gttto&quot;' function='range' level='[none:Word:nk]' to='&quot;harrymeghan&quot;' />
+                <groupfilter from='&quot;hashtag&quot;' function='range' level='[none:Word:nk]' to='&quot;healthcar&quot;' />
+                <groupfilter from='&quot;hearditallnow&quot;' function='range' level='[none:Word:nk]' to='&quot;heathrow&quot;' />
+                <groupfilter from='&quot;heavymet&quot;' function='range' level='[none:Word:nk]' to='&quot;hellmannuk&quot;' />
+                <groupfilter from='&quot;hemsworthg&quot;' function='range' level='[none:Word:nk]' to='&quot;homegrown&quot;' />
+                <groupfilter from='&quot;homeown&quot;' function='range' level='[none:Word:nk]' to='&quot;honda&quot;' />
+                <groupfilter from='&quot;hongkongagr&quot;' function='range' level='[none:Word:nk]' to='&quot;hongkongprostest&quot;' />
+                <groupfilter from='&quot;hongkongriot&quot;' function='range' level='[none:Word:nk]' to='&quot;hostilearchitectur&quot;' />
+                <groupfilter from='&quot;houseofcard&quot;' function='range' level='[none:Word:nk]' to='&quot;humanresourc&quot;' />
+                <groupfilter from='&quot;humbug&quot;' function='range' level='[none:Word:nk]' to='&quot;icon&quot;' />
+                <groupfilter from='&quot;idealismprevail&quot;' function='range' level='[none:Word:nk]' to='&quot;ihopeournextpresid&quot;' />
+                <groupfilter from='&quot;ilfordnorth&quot;' function='range' level='[none:Word:nk]' to='&quot;imaboom&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;imacelebritygetmeoutofher&quot;' />
+                <groupfilter from='&quot;immigrantsout&quot;' function='range' level='[none:Word:nk]' to='&quot;imparti&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;impeachinghear&quot;' />
+                <groupfilter from='&quot;impeachmentinquiri&quot;' function='range' level='[none:Word:nk]' to='&quot;imsosickandtir&quot;' />
+                <groupfilter from='&quot;imwithoutintegr&quot;' function='range' level='[none:Word:nk]' to='&quot;ind&quot;' />
+                <groupfilter from='&quot;independencenow&quot;' function='range' level='[none:Word:nk]' to='&quot;independentulst&quot;' />
+                <groupfilter from='&quot;indian&quot;' function='range' level='[none:Word:nk]' to='&quot;indyminc&quot;' />
+                <groupfilter from='&quot;indywal&quot;' function='range' level='[none:Word:nk]' to='&quot;informedsecur&quot;' />
+                <groupfilter from='&quot;infosecmag&quot;' function='range' level='[none:Word:nk]' to='&quot;inlimbo&quot;' />
+                <groupfilter from='&quot;inoutinout&quot;' function='range' level='[none:Word:nk]' to='&quot;interestr&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;intern&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;internationalbreak&quot;' />
+                <groupfilter from='&quot;internationalnew&quot;' function='range' level='[none:Word:nk]' to='&quot;inverclyd&quot;' />
+                <groupfilter from='&quot;investig&quot;' function='range' level='[none:Word:nk]' to='&quot;iosco&quot;' />
+                <groupfilter from='&quot;iow&quot;' function='range' level='[none:Word:nk]' to='&quot;iran&quot;' />
+                <groupfilter from='&quot;iranprotet&quot;' function='range' level='[none:Word:nk]' to='&quot;ireden&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;irelandnorthwest&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;irishacc&quot;' />
+                <groupfilter from='&quot;irishbord&quot;' function='range' level='[none:Word:nk]' to='&quot;isitiron&quot;' />
+                <groupfilter from='&quot;isitokay&quot;' function='range' level='[none:Word:nk]' to='&quot;ispir&quot;' />
+                <groupfilter from='&quot;israelunderfir&quot;' function='range' level='[none:Word:nk]' to='&quot;it&quot;' />
+                <groupfilter from='&quot;itndeb&quot;' function='range' level='[none:Word:nk]' to='&quot;itstink&quot;' />
+                <groupfilter from='&quot;itvdeb&quot;' function='range' level='[none:Word:nk]' to='&quot;itvleadersd&quot;' />
+                <groupfilter from='&quot;itvleaversdeb&quot;' function='range' level='[none:Word:nk]' to='&quot;itvthedeb&quot;' />
+                <groupfilter from='&quot;iwantmyshitsandwichnow&quot;' function='range' level='[none:Word:nk]' to='&quot;jenniferacuri&quot;' />
+                <groupfilter from='&quot;jenniferexit&quot;' function='range' level='[none:Word:nk]' to='&quot;jeremycobyn&quot;' />
+                <groupfilter from='&quot;jeremyhunt&quot;' function='range' level='[none:Word:nk]' to='&quot;jeremyversusjohnson&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;jeremyvjohnson&quot;' />
+                <groupfilter from='&quot;jerseyci&quot;' function='range' level='[none:Word:nk]' to='&quot;joannemcn&quot;' />
+                <groupfilter from='&quot;jobsearch&quot;' function='range' level='[none:Word:nk]' to='&quot;johnbercow&quot;' />
+                <groupfilter from='&quot;johncurti&quot;' function='range' level='[none:Word:nk]' to='&quot;johnruskin&quot;' />
+                <groupfilter from='&quot;johnsoncbispeech&quot;' function='range' level='[none:Word:nk]' to='&quot;johnsonsg&quot;' />
+                <groupfilter from='&quot;johnsonvscorbyn&quot;' function='range' level='[none:Word:nk]' to='&quot;jonathanwin&quot;' />
+                <groupfilter from='&quot;joswinsonisatori&quot;' function='range' level='[none:Word:nk]' to='&quot;justplainpolit&quot;' />
+                <groupfilter from='&quot;justsayin&quot;' function='range' level='[none:Word:nk]' to='&quot;k&quot;' />
+                <groupfilter from='&quot;kalergi&quot;' function='range' level='[none:Word:nk]' to='&quot;kenfollett&quot;' />
+                <groupfilter from='&quot;kent&quot;' function='range' level='[none:Word:nk]' to='&quot;knivesout&quot;' />
+                <groupfilter from='&quot;knobhead&quot;' function='range' level='[none:Word:nk]' to='&quot;labor&quot;' />
+                <groupfilter from='&quot;labourarsehol&quot;' function='range' level='[none:Word:nk]' to='&quot;labourdog&quot;' />
+                <groupfilter from='&quot;labourgovt&quot;' function='range' level='[none:Word:nk]' to='&quot;labourleft&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;labourliar&quot;' />
+                <groupfilter from='&quot;labourmarket&quot;' function='range' level='[none:Word:nk]' to='&quot;labourout&quot;' />
+                <groupfilter from='&quot;labourpolici&quot;' function='range' level='[none:Word:nk]' to='&quot;lartg&quot;' />
+                <groupfilter from='&quot;lastleg&quot;' function='range' level='[none:Word:nk]' to='&quot;lavajato&quot;' />
+                <groupfilter from='&quot;lawyer&quot;' function='range' level='[none:Word:nk]' to='&quot;laxit&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;lbswac&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;leadersddeb&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;leadership&quot;' />
+                <groupfilter from='&quot;leadingfigur&quot;' function='range' level='[none:Word:nk]' to='&quot;learnwithorbex&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;leavecampaign&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;leaved&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;leaveoct&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;leaveorremain&quot;' />
+                <groupfilter from='&quot;leaversdeb&quot;' function='range' level='[none:Word:nk]' to='&quot;legal&quot;' />
+                <groupfilter from='&quot;legalnamefraud&quot;' function='range' level='[none:Word:nk]' to='&quot;lewishamwest&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;lexitisbrexit&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;lfl&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;lgbtqia&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;lgbtqp&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;liamfox&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;liamround&quot;' />
+                <groupfilter from='&quot;liararsetorybori&quot;' function='range' level='[none:Word:nk]' to='&quot;liarinchief&quot;' />
+                <groupfilter from='&quot;liarjonson&quot;' function='range' level='[none:Word:nk]' to='&quot;lib&quot;' />
+                <groupfilter from='&quot;libdembarchart&quot;' function='range' level='[none:Word:nk]' to='&quot;liberalbollocksparti&quot;' />
+                <groupfilter from='&quot;liberaldemocratsfantasypolit&quot;' function='range' level='[none:Word:nk]' to='&quot;liberti&quot;' />
+                <groupfilter from='&quot;libor&quot;' function='range' level='[none:Word:nk]' to='&quot;lloy&quot;' />
+                <groupfilter from='&quot;loanchargeelect&quot;' function='range' level='[none:Word:nk]' to='&quot;lol&quot;' />
+                <groupfilter from='&quot;londonassembl&quot;' function='range' level='[none:Word:nk]' to='&quot;louisstedmanbryc&quot;' />
+                <groupfilter from='&quot;loveeu&quot;' function='range' level='[none:Word:nk]' to='&quot;lyingscrot&quot;' />
+                <groupfilter from='&quot;lyinjohnson&quot;' function='range' level='[none:Word:nk]' to='&quot;macroeconomi&quot;' />
+                <groupfilter from='&quot;macrondemiss&quot;' function='range' level='[none:Word:nk]' to='&quot;maesyco&quot;' />
+                <groupfilter from='&quot;magat&quot;' function='range' level='[none:Word:nk]' to='&quot;magicmoneytre&quot;' />
+                <groupfilter from='&quot;magnitskyact&quot;' function='range' level='[none:Word:nk]' to='&quot;makeitmonica&quot;' />
+                <groupfilter from='&quot;makerfield&quot;' function='range' level='[none:Word:nk]' to='&quot;manag&quot;' />
+                <groupfilter from='&quot;manciti&quot;' function='range' level='[none:Word:nk]' to='&quot;manu&quot;' />
+                <groupfilter from='&quot;manufacturinguk&quot;' function='range' level='[none:Word:nk]' to='&quot;markd&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;marketscreen&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;marketsnew&quot;' />
+                <groupfilter from='&quot;markpawsey&quot;' function='range' level='[none:Word:nk]' to='&quot;marmiteman&quot;' />
+                <groupfilter from='&quot;marshillblog&quot;' function='range' level='[none:Word:nk]' to='&quot;meddl&quot;' />
+                <groupfilter from='&quot;mediali&quot;' function='range' level='[none:Word:nk]' to='&quot;mentoo&quot;' />
+                <groupfilter from='&quot;merced&quot;' function='range' level='[none:Word:nk]' to='&quot;metal&quot;' />
+                <groupfilter from='&quot;metooindia&quot;' function='range' level='[none:Word:nk]' to='&quot;michaelcain&quot;' />
+                <groupfilter from='&quot;michaelric&quot;' function='range' level='[none:Word:nk]' to='&quot;migrantwork&quot;' />
+                <groupfilter from='&quot;migratori&quot;' function='range' level='[none:Word:nk]' to='&quot;mondaymorn&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;mondaythought&quot;' />
+                <groupfilter from='&quot;moneylaund&quot;' function='range' level='[none:Word:nk]' to='&quot;morrissey&quot;' />
+                <groupfilter from='&quot;moslem&quot;' function='range' level='[none:Word:nk]' to='&quot;mossley&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;mosthaunt&quot;' />
+                <groupfilter from='&quot;motleycru&quot;' function='range' level='[none:Word:nk]' to='&quot;movingtoscotland&quot;' />
+                <groupfilter from='&quot;mrcorbyn&quot;' function='range' level='[none:Word:nk]' to='&quot;msexit&quot;' />
+                <groupfilter from='&quot;msnbc&quot;' function='range' level='[none:Word:nk]' to='&quot;mudd&quot;' />
+                <groupfilter from='&quot;mullah&quot;' function='range' level='[none:Word:nk]' to='&quot;nathangil&quot;' />
+                <groupfilter from='&quot;nationaldebt&quot;' function='range' level='[none:Word:nk]' to='&quot;nationalstressawarenessday&quot;' />
+                <groupfilter from='&quot;natosummitlondon&quot;' function='range' level='[none:Word:nk]' to='&quot;nelli&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;neoliberaldisastercapit&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;netflix&quot;' />
+                <groupfilter from='&quot;network&quot;' function='range' level='[none:Word:nk]' to='&quot;neverconserv&quot;' />
+                <groupfilter from='&quot;neverendingstori&quot;' function='range' level='[none:Word:nk]' to='&quot;nevertori&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;nevertrustlabcon&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;nevertrusttori&quot;' />
+                <groupfilter from='&quot;newalanbennettmonologu&quot;' function='range' level='[none:Word:nk]' to='&quot;newsheadlin&quot;' />
+                <groupfilter from='&quot;newspap&quot;' function='range' level='[none:Word:nk]' to='&quot;nhsbu&quot;' />
+                <groupfilter from='&quot;nhsdisast&quot;' function='range' level='[none:Word:nk]' to='&quot;nhsmillion&quot;' />
+                <groupfilter from='&quot;nhswaitingtim&quot;' function='range' level='[none:Word:nk]' to='&quot;nigelevan&quot;' />
+                <groupfilter from='&quot;nigelknow&quot;' function='range' level='[none:Word:nk]' to='&quot;nobrain&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;nobrexitday&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;nobrexitforireland&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;noconfid&quot;' />
+                <groupfilter from='&quot;nodealgoodd&quot;' function='range' level='[none:Word:nk]' to='&quot;noreferendum&quot;' />
+                <groupfilter from='&quot;normalis&quot;' function='range' level='[none:Word:nk]' to='&quot;northern&quot;' />
+                <groupfilter from='&quot;northernwisdom&quot;' function='range' level='[none:Word:nk]' to='&quot;notmylabour&quot;' />
+                <groupfilter from='&quot;notmyprimeminist&quot;' function='range' level='[none:Word:nk]' to='&quot;novel&quot;' />
+                <groupfilter from='&quot;nowplay&quot;' function='range' level='[none:Word:nk]' to='&quot;ourfreedomofmov&quot;' />
+                <groupfilter from='&quot;outcom&quot;' function='range' level='[none:Word:nk]' to='&quot;ovconnect&quot;' />
+                <groupfilter from='&quot;ovenreadybori&quot;' function='range' level='[none:Word:nk]' to='&quot;parkwaysoci&quot;' />
+                <groupfilter from='&quot;parliamentagainstthepeopl&quot;' function='range' level='[none:Word:nk]' to='&quot;parthenonsculptur&quot;' />
+                <groupfilter from='&quot;partyconfer&quot;' function='range' level='[none:Word:nk]' to='&quot;patreon&quot;' />
+                <groupfilter from='&quot;patriotsawaken&quot;' function='range' level='[none:Word:nk]' to='&quot;peepshow&quot;' />
+                <groupfilter from='&quot;peerageg&quot;' function='range' level='[none:Word:nk]' to='&quot;peopleplacestechnolog&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;peoplespowerhous&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;peoplesprimeminist&quot;' />
+                <groupfilter from='&quot;peoplesvotemarch&quot;' function='range' level='[none:Word:nk]' to='&quot;peston&quot;' />
+                <groupfilter from='&quot;petermandelson&quot;' function='range' level='[none:Word:nk]' to='&quot;pfeffelpifflewaffl&quot;' />
+                <groupfilter from='&quot;pharmaceut&quot;' function='range' level='[none:Word:nk]' to='&quot;plaid&quot;' />
+                <groupfilter from='&quot;plan&quot;' function='range' level='[none:Word:nk]' to='&quot;plexit&quot;' />
+                <groupfilter from='&quot;plzen&quot;' function='range' level='[none:Word:nk]' to='&quot;pochin&quot;' />
+                <groupfilter from='&quot;podestaemail&quot;' function='range' level='[none:Word:nk]' to='&quot;polexit&quot;' />
+                <groupfilter from='&quot;policebrut&quot;' function='range' level='[none:Word:nk]' to='&quot;polish&quot;' />
+                <groupfilter from='&quot;politicalcartoon&quot;' function='range' level='[none:Word:nk]' to='&quot;politick&quot;' />
+                <groupfilter from='&quot;pollingdata&quot;' function='range' level='[none:Word:nk]' to='&quot;poplar&quot;' />
+                <groupfilter from='&quot;pornstargirlfriend&quot;' function='range' level='[none:Word:nk]' to='&quot;potu&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;poundshoptori&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;poundyen&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;powel&quot;' />
+                <groupfilter from='&quot;powertv&quot;' function='range' level='[none:Word:nk]' to='&quot;prettywomanwisdom&quot;' />
+                <groupfilter from='&quot;pride&quot;' function='range' level='[none:Word:nk]' to='&quot;primemendacit&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;primeproperti&quot;' />
+                <groupfilter from='&quot;princeandrewandtheepsteinscand&quot;' function='range' level='[none:Word:nk]' to='&quot;progress&quot;' />
+                <groupfilter from='&quot;promis&quot;' function='range' level='[none:Word:nk]' to='&quot;properbrexit&quot;' />
+                <groupfilter from='&quot;propertyinvest&quot;' function='range' level='[none:Word:nk]' to='&quot;propertymarket&quot;' />
+                <groupfilter from='&quot;propertypric&quot;' function='range' level='[none:Word:nk]' to='&quot;putih&quot;' />
+                <groupfilter from='&quot;putinatwar&quot;' function='range' level='[none:Word:nk]' to='&quot;pwllgwaun&quot;' />
+                <groupfilter from='&quot;qanta&quot;' function='range' level='[none:Word:nk]' to='&quot;questionoftheday&quot;' />
+                <groupfilter from='&quot;quickrealitycheck&quot;' function='range' level='[none:Word:nk]' to='&quot;ra&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;raboresearch&quot;' />
+                <groupfilter from='&quot;racistlabour&quot;' function='range' level='[none:Word:nk]' to='&quot;realbrexit&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;realdonaldtrump&quot;' />
+                <groupfilter from='&quot;realgreennotfakegreen&quot;' function='range' level='[none:Word:nk]' to='&quot;record&quot;' />
+                <groupfilter from='&quot;recruitmenttalk&quot;' function='range' level='[none:Word:nk]' to='&quot;reesmogg&quot;' />
+                <groupfilter from='&quot;refin&quot;' function='range' level='[none:Word:nk]' to='&quot;regist&quot;' />
+                <groupfilter from='&quot;regul&quot;' function='range' level='[none:Word:nk]' to='&quot;releasethereport&quot;' />
+                <groupfilter from='&quot;releasethesnydercut&quot;' function='range' level='[none:Word:nk]' to='&quot;relish&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;remainali&quot;' />
+                <groupfilter from='&quot;remainbonu&quot;' function='range' level='[none:Word:nk]' to='&quot;remainerfirst&quot;' />
+                <groupfilter from='&quot;remainershambl&quot;' function='range' level='[none:Word:nk]' to='&quot;remoam&quot;' />
+                <groupfilter from='&quot;remov&quot;' function='range' level='[none:Word:nk]' to='&quot;replay&quot;' />
+                <groupfilter from='&quot;repossess&quot;' function='range' level='[none:Word:nk]' to='&quot;revoeka&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;revokeart&quot;' />
+                <groupfilter from='&quot;revokeremain&quot;' function='range' level='[none:Word:nk]' to='&quot;ricothedem&quot;' />
+                <groupfilter from='&quot;ridicul&quot;' function='range' level='[none:Word:nk]' to='&quot;righttovot&quot;' />
+                <groupfilter from='&quot;ringo&quot;' function='range' level='[none:Word:nk]' to='&quot;russelsmo&quot;' />
+                <groupfilter from='&quot;russiag&quot;' function='range' level='[none:Word:nk]' to='&quot;russiainterferencereport&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;russianag&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;russiancollus&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;russianenquiri&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;russianinvolv&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;russianmoney&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;russianrreport&quot;' />
+                <groupfilter from='&quot;rustbucket&quot;' function='range' level='[none:Word:nk]' to='&quot;saturdaysunris&quot;' />
+                <groupfilter from='&quot;saudiarabia&quot;' function='range' level='[none:Word:nk]' to='&quot;saveourantibiot&quot;' />
+                <groupfilter from='&quot;saveouruk&quot;' function='range' level='[none:Word:nk]' to='&quot;sceptic&quot;' />
+                <groupfilter from='&quot;schadenfreud&quot;' function='range' level='[none:Word:nk]' to='&quot;schoolcut&quot;' />
+                <groupfilter from='&quot;scl&quot;' function='range' level='[none:Word:nk]' to='&quot;scotfishfutur&quot;' />
+                <groupfilter from='&quot;scotlandforscot&quot;' function='range' level='[none:Word:nk]' to='&quot;scotref&quot;' />
+                <groupfilter from='&quot;scottishbookweek&quot;' function='range' level='[none:Word:nk]' to='&quot;sdg&quot;' />
+                <groupfilter from='&quot;sdp&quot;' function='range' level='[none:Word:nk]' to='&quot;secondref&quot;' />
+                <groupfilter from='&quot;secretaryofst&quot;' function='range' level='[none:Word:nk]' to='&quot;secularindia&quot;' />
+                <groupfilter from='&quot;securityflaw&quot;' function='range' level='[none:Word:nk]' to='&quot;sexwork&quot;' />
+                <groupfilter from='&quot;shaggerjohnson&quot;' function='range' level='[none:Word:nk]' to='&quot;sign&quot;' />
+                <groupfilter from='&quot;sikh&quot;' function='range' level='[none:Word:nk]' to='&quot;sketch&quot;' />
+                <groupfilter from='&quot;skill&quot;' function='range' level='[none:Word:nk]' to='&quot;skyli&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;skynewsisfakenew&quot;' />
+                <groupfilter from='&quot;skyq&quot;' function='range' level='[none:Word:nk]' to='&quot;smalltowninertia&quot;' />
+                <groupfilter from='&quot;smartwoman&quot;' function='range' level='[none:Word:nk]' to='&quot;smd&quot;' />
+                <groupfilter from='&quot;smear&quot;' function='range' level='[none:Word:nk]' to='&quot;snowmageddon&quot;' />
+                <groupfilter from='&quot;snpactiv&quot;' function='range' level='[none:Word:nk]' to='&quot;socialact&quot;' />
+                <groupfilter from='&quot;socialenviron&quot;' function='range' level='[none:Word:nk]' to='&quot;sorelos&quot;' />
+                <groupfilter from='&quot;sorosisevil&quot;' function='range' level='[none:Word:nk]' to='&quot;soultrainaward&quot;' />
+                <groupfilter from='&quot;southamptonitchen&quot;' function='range' level='[none:Word:nk]' to='&quot;southfield&quot;' />
+                <groupfilter from='&quot;southgateyour&quot;' function='range' level='[none:Word:nk]' to='&quot;spafferjohnson&quot;' />
+                <groupfilter from='&quot;spanishelect&quot;' function='range' level='[none:Word:nk]' to='&quot;standingwithhk&quot;' />
+                <groupfilter from='&quot;standupandbecount&quot;' function='range' level='[none:Word:nk]' to='&quot;startrek&quot;' />
+                <groupfilter from='&quot;starvat&quot;' function='range' level='[none:Word:nk]' to='&quot;stepupnotstepdown&quot;' />
+                <groupfilter from='&quot;sterlin&quot;' function='range' level='[none:Word:nk]' to='&quot;sticker&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;still&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;stillwatchingthough&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;stitchup&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;stive&quot;' />
+                <groupfilter from='&quot;stockexchanch&quot;' function='range' level='[none:Word:nk]' to='&quot;stop&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;stopbreixt&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;stopbrexitnow&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;stopbrexitondayon&quot;' />
+                <groupfilter from='&quot;stopbrexitsavedemocraci&quot;' function='range' level='[none:Word:nk]' to='&quot;stopthecorrupt&quot;' />
+                <groupfilter from='&quot;stopthemad&quot;' function='range' level='[none:Word:nk]' to='&quot;stress&quot;' />
+                <groupfilter from='&quot;strictlycomedanc&quot;' function='range' level='[none:Word:nk]' to='&quot;stucdw&quot;' />
+                <groupfilter from='&quot;studentaccomad&quot;' function='range' level='[none:Word:nk]' to='&quot;sundaymorn&quot;' />
+                <groupfilter from='&quot;sundaypoliticseast&quot;' function='range' level='[none:Word:nk]' to='&quot;supremecourt&quot;' />
+                <groupfilter from='&quot;surreyheath&quot;' function='range' level='[none:Word:nk]' to='&quot;sustainablefin&quot;' />
+                <groupfilter from='&quot;suttonandcheam&quot;' function='range' level='[none:Word:nk]' to='&quot;swfc&quot;' />
+                <groupfilter from='&quot;swindon&quot;' function='range' level='[none:Word:nk]' to='&quot;swinggat&quot;' />
+                <groupfilter from='&quot;switchedoff&quot;' function='range' level='[none:Word:nk]' to='&quot;tacticalstand&quot;' />
+                <groupfilter from='&quot;taffswel&quot;' function='range' level='[none:Word:nk]' to='&quot;takeaway&quot;' />
+                <groupfilter from='&quot;takebakecontrol&quot;' function='range' level='[none:Word:nk]' to='&quot;tatton&quot;' />
+                <groupfilter from='&quot;taxcast&quot;' function='range' level='[none:Word:nk]' to='&quot;teamnichol&quot;' />
+                <groupfilter from='&quot;teamtommi&quot;' function='range' level='[none:Word:nk]' to='&quot;teatoindia&quot;' />
+                <groupfilter from='&quot;technew&quot;' function='range' level='[none:Word:nk]' to='&quot;tesconorthshield&quot;' />
+                <groupfilter from='&quot;tessdali&quot;' function='range' level='[none:Word:nk]' to='&quot;thatisal&quot;' />
+                <groupfilter from='&quot;theandrewmarrshow&quot;' function='range' level='[none:Word:nk]' to='&quot;thebrexitcondom&quot;' />
+                <groupfilter from='&quot;thecampaign&quot;' function='range' level='[none:Word:nk]' to='&quot;thecostofthetori&quot;' />
+                <groupfilter from='&quot;thecrownfinalepisod&quot;' function='range' level='[none:Word:nk]' to='&quot;thegameaward&quot;' />
+                <groupfilter from='&quot;thegreatawakeningworldwid&quot;' function='range' level='[none:Word:nk]' to='&quot;theresa&quot;' />
+                <groupfilter from='&quot;theresist&quot;' function='range' level='[none:Word:nk]' to='&quot;thewal&quot;' />
+                <groupfilter from='&quot;thewayup&quot;' function='range' level='[none:Word:nk]' to='&quot;thisisthenorth&quot;' />
+                <groupfilter from='&quot;thisweek&quot;' function='range' level='[none:Word:nk]' to='&quot;tic&quot;' />
+                <groupfilter from='&quot;tidal&quot;' function='range' level='[none:Word:nk]' to='&quot;tommyrobinsom&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;tommyrobinsonnew&quot;' />
+                <groupfilter from='&quot;tongueouttuesday&quot;' function='range' level='[none:Word:nk]' to='&quot;tonyblair&quot;' />
+                <groupfilter from='&quot;toofarright&quot;' function='range' level='[none:Word:nk]' to='&quot;top&quot;' />
+                <groupfilter from='&quot;topdogtip&quot;' function='range' level='[none:Word:nk]' to='&quot;torgo&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;toriesli&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;toriesliar&quot;' />
+                <groupfilter from='&quot;toriestheinhumaneparti&quot;' function='range' level='[none:Word:nk]' to='&quot;torybingo&quot;' />
+                <groupfilter from='&quot;torybrexit&quot;' function='range' level='[none:Word:nk]' to='&quot;torylar&quot;' />
+                <groupfilter from='&quot;toryliesru&quot;' function='range' level='[none:Word:nk]' to='&quot;toxicterminolog&quot;' />
+                <groupfilter from='&quot;toxictoriesout&quot;' function='range' level='[none:Word:nk]' to='&quot;tracker&quot;' />
+                <groupfilter from='&quot;tradebarrierindex&quot;' function='range' level='[none:Word:nk]' to='&quot;tradetalk&quot;' />
+                <groupfilter from='&quot;tradingplan&quot;' function='range' level='[none:Word:nk]' to='&quot;transport&quot;' />
+                <groupfilter from='&quot;treacher&quot;' function='range' level='[none:Word:nk]' to='&quot;truepion&quot;' />
+                <groupfilter from='&quot;trumpabandonedthekurd&quot;' function='range' level='[none:Word:nk]' to='&quot;tuesdaymotiv&quot;' />
+                <groupfilter from='&quot;tuesdayvib&quot;' function='range' level='[none:Word:nk]' to='&quot;turpo&quot;' />
+                <groupfilter from='&quot;twatshowhost&quot;' function='range' level='[none:Word:nk]' to='&quot;ukbant&quot;' />
+                <groupfilter from='&quot;ukbizlunch&quot;' function='range' level='[none:Word:nk]' to='&quot;ukeconomi&quot;' />
+                <groupfilter from='&quot;ukexit&quot;' function='range' level='[none:Word:nk]' to='&quot;ukinvest&quot;' />
+                <groupfilter from='&quot;ukmanufactur&quot;' function='range' level='[none:Word:nk]' to='&quot;ukpolic&quot;' />
+                <groupfilter from='&quot;ukpoliticalparti&quot;' function='range' level='[none:Word:nk]' to='&quot;unitedireland&quot;' />
+                <groupfilter from='&quot;unitedn&quot;' function='range' level='[none:Word:nk]' to='&quot;unitethecountri&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;uniti&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;univers&quot;' />
+                <groupfilter from='&quot;universaljurisdict&quot;' function='range' level='[none:Word:nk]' to='&quot;untrustworthi&quot;' />
+                <groupfilter from='&quot;upajiwa&quot;' function='range' level='[none:Word:nk]' to='&quot;urgent&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;uschina&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;usdchf&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;usdebt&quot;' />
+                <groupfilter from='&quot;usdtri&quot;' function='range' level='[none:Word:nk]' to='&quot;uspoli&quot;' />
+                <groupfilter from='&quot;util&quot;' function='range' level='[none:Word:nk]' to='&quot;veteran&quot;' />
+                <groupfilter from='&quot;vic&quot;' function='range' level='[none:Word:nk]' to='&quot;victimblam&quot;' />
+                <groupfilter from='&quot;viennablood&quot;' function='range' level='[none:Word:nk]' to='&quot;vonderleyen&quot;' />
+                <groupfilter from='&quot;voteami&quot;' function='range' level='[none:Word:nk]' to='&quot;votebrexit&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;voteclair&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;votecon&quot;' />
+                <groupfilter from='&quot;voteconservativegettrump&quot;' function='range' level='[none:Word:nk]' to='&quot;votedrteckkhong&quot;' />
+                <groupfilter from='&quot;voteengland&quot;' function='range' level='[none:Word:nk]' to='&quot;voteindependentgetindepend&quot;' />
+                <groupfilter from='&quot;votejohnsongettrump&quot;' function='range' level='[none:Word:nk]' to='&quot;votekerr&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;votelabourdec&quot;' />
+                <groupfilter from='&quot;votelabourget&quot;' function='range' level='[none:Word:nk]' to='&quot;votelabourvoterac&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;voteleavebrokethelaw&quot;' />
+                <groupfilter from='&quot;votelibdemgettori&quot;' function='range' level='[none:Word:nk]' to='&quot;voter&quot;' />
+                <groupfilter from='&quot;votesdp&quot;' function='range' level='[none:Word:nk]' to='&quot;votesmart&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;votestrateg&quot;' />
+                <groupfilter from='&quot;votetacta&quot;' function='range' level='[none:Word:nk]' to='&quot;votetori&quot;' />
+                <groupfilter from='&quot;votetorygetfarag&quot;' function='range' level='[none:Word:nk]' to='&quot;wakeupuk&quot;' />
+                <groupfilter from='&quot;walesfarm&quot;' function='range' level='[none:Word:nk]' to='&quot;waleswherethat&quot;' />
+                <groupfilter from='&quot;walkawayfromliblabcon&quot;' function='range' level='[none:Word:nk]' to='&quot;warningunpopularopinionklaxon&quot;' />
+                <groupfilter from='&quot;waroncontract&quot;' function='range' level='[none:Word:nk]' to='&quot;warringtonnorth&quot;' />
+                <groupfilter from='&quot;warwickshir&quot;' function='range' level='[none:Word:nk]' to='&quot;waterqu&quot;' />
+                <groupfilter from='&quot;waton&quot;' function='range' level='[none:Word:nk]' to='&quot;westminist&quot;' />
+                <groupfilter from='&quot;westminsterhour&quot;' function='range' level='[none:Word:nk]' to='&quot;weworkfory&quot;' />
+                <groupfilter from='&quot;wexitalberta&quot;' function='range' level='[none:Word:nk]' to='&quot;whitenation&quot;' />
+                <groupfilter from='&quot;whitepow&quot;' function='range' level='[none:Word:nk]' to='&quot;widdecom&quot;' />
+                <groupfilter from='&quot;widdicomb&quot;' function='range' level='[none:Word:nk]' to='&quot;winforcorbi&quot;' />
+                <groupfilter from='&quot;wingingit&quot;' function='range' level='[none:Word:nk]' to='&quot;wo&quot;' />
+                <groupfilter from='&quot;wokedemocrat&quot;' function='range' level='[none:Word:nk]' to='&quot;womanoftheyear&quot;' />
+                <groupfilter from='&quot;womenabus&quot;' function='range' level='[none:Word:nk]' to='&quot;worktogeth&quot;' />
+                <groupfilter from='&quot;worldaton&quot;' function='range' level='[none:Word:nk]' to='&quot;worldiswatch&quot;' />
+                <groupfilter from='&quot;worldpeacemiss&quot;' function='range' level='[none:Word:nk]' to='&quot;worldtradeorgan&quot;' />
+                <groupfilter from='&quot;wors&quot;' function='range' level='[none:Word:nk]' to='&quot;wrekin&quot;' />
+                <groupfilter from='&quot;writelif&quot;' function='range' level='[none:Word:nk]' to='&quot;wtf&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;wtobrexit&quot;' />
+                <groupfilter function='member' level='[none:Word:nk]' member='&quot;wuwei&quot;' />
+                <groupfilter from='&quot;wyckoff&quot;' function='range' level='[none:Word:nk]' to='&quot;ybn&quot;' />
+                <groupfilter from='&quot;yeahbutnobutyeah&quot;' function='range' level='[none:Word:nk]' to='&quot;yellowtrous&quot;' />
+                <groupfilter from='&quot;yelow&quot;' function='range' level='[none:Word:nk]' to='&quot;yorkout&quot;' />
+                <groupfilter from='&quot;yorkshireflood&quot;' function='range' level='[none:Word:nk]' to='&quot;zirigozagroup&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0nk9b1z1l8104817rkovg1459cwb].[none:Word:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.0nk9b1z1l8104817rkovg1459cwb].[sum:Word_Count:qk]' />
+              <color column='[federated.0nk9b1z1l8104817rkovg1459cwb].[sum:Word_Count:qk]' />
+              <text column='[federated.0nk9b1z1l8104817rkovg1459cwb].[none:Word:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{81382EFC-422A-43C3-8FC2-B374730EEFD6}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0nk9b1z1l8104817rkovg1459cwb].[sum:Word_Count:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0nk9b1z1l8104817rkovg1459cwb].[none:Word:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{90DEC687-4563-44FC-B606-42D61D01A9EC}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
